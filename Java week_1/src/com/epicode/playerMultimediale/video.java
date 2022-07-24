@@ -7,8 +7,8 @@ public class video extends riproducibile implements IcontrolliLuminosità,Icontr
 	private int volume;
 	private int luminosita;
 	
-	public video(String titolo, int durata,int tipo , int luminosita,int volume ) {
-		super(titolo, durata, tipo );
+	public video(String titolo, int tipo,int durata,  int luminosita,int volume ) {
+		super(titolo, tipo,durata  );
 		this.volume = volume;
 		this.luminosita = luminosita;
 		

@@ -4,9 +4,13 @@ import com.epicode.playerMultimediale.interfacce.IcontrolliLuminosità;
 
 public class immagine extends elementoMultimediale implements IcontrolliLuminosità{
 	private int luminosita;
-	public immagine(String titolo, int luminosita, int tipo ) {
-		super(titolo, luminosita );
+	
+	
+	
+	public immagine(String titolo, int tipo,int luminosita  ) {
+		super(titolo, tipo );
 		this.luminosita = luminosita;
+		
 		
 	}
 

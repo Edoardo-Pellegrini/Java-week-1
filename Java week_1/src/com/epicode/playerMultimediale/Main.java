@@ -26,7 +26,9 @@ public class Main {
 				System.out.println("Write the title and the initial luminosity");
 				String t = file.next();
 				int lum = file.nextInt();
-				fileMultimediali[x] = new immagine(t, lum, n+1);
+				int tipo= n+1;
+				fileMultimediali[x] = new immagine(t, tipo, lum);
+				
 			} else if (n == 1) {		// creazione video
 				System.out.println("Write the title, the durata, the initial volume and the initial luminosity");
 				String t = file.next();
@@ -34,7 +36,7 @@ public class Main {
 				System.out.println(durata);
 				int volume = file.nextInt();
 				int lum = file.nextInt();
-				fileMultimediali[x] = new video(t, durata, n+1, lum,volume );
+				fileMultimediali[x] = new video(t,  n+1,durata, lum,volume );
 				
 			} else if (n == 2) {		// creazione audio
 				System.out.println("Write the title, the durata and the initial volume ");
@@ -42,7 +44,7 @@ public class Main {
 				int durata = file.nextInt();
 				int volume = file.nextInt();
 
-				fileMultimediali[x] = new audio(t, durata, volume, n+1);
+				fileMultimediali[x] = new audio(t, durata, volume,n+1 );
 			} else {
 				x--;
 				System.out.println("Error !select a valid file!");
@@ -66,9 +68,11 @@ public class Main {
 				
 				
 				boolean dentroMenu = true;		//variabile controllo
-				int n1;
+				
 				while (dentroMenu == true) {
-					if (array[n-1].getTipo() == 2) {		//controllo che tipo di file è
+					
+					if (array[n-1].getTipo() == 2) {	//controllo che tipo di file è
+						int n1;
 						System.out.println("===============================");			//menu se è un video
 						System.out.println("PRESS 0 to go back");
 						System.out.println("PRESS 1 to play");
@@ -83,7 +87,7 @@ public class Main {
 							dentroMenu = false;
 						} else if (n1 == 1) {
 							array[n-1].play();			//azioni che può compiere
-							System.out.println(((riproducibile) array[n-1]).getDurata());
+							
 							
 						} else if (n1 == 2) {
 							((video) array[n-1]).alzaVolume();
@@ -97,7 +101,8 @@ public class Main {
 							System.out.println("not valid selection! error!");
 
 						}
-					}else if(array[n-1].getTipo() == 0) {//menu se è una immagine
+					}else if(array[n-1].getTipo() == 1) {//menu se è una immagine
+						int n1;
 						System.out.println("===============================");
 						System.out.println("PRESS 0 to go back");
 						System.out.println("PRESS 1 to show");
@@ -121,6 +126,7 @@ public class Main {
 
 						}
 					}else if(array[n-1].getTipo() == 3) {//menu se è un audio
+						int n1;
 						System.out.println("===============================");
 						System.out.println("PRESS 0 to go back");
 						System.out.println("PRESS 1 to play");

@@ -9,6 +9,8 @@ public abstract class elementoMultimediale {			//classe astratta principale
 		this.tipo = tipo;
 	}
 	
+	
+
 	public String getTitolo() {
 		return titolo;
 	}

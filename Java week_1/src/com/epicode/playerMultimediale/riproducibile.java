@@ -5,7 +5,7 @@ public abstract  class riproducibile extends elementoMultimediale{			//classe as
 	
 	
 	public  riproducibile(String titolo,int tipo,int durata){
-		super(titolo, durata);
+		super(titolo, tipo);
 		this.durata = durata;
 	}
 	
